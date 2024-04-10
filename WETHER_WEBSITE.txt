@@ -1,0 +1,133 @@
+//HTML_CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weatherwebsite.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <div class="search-box">
+            <input type="text" id="locationInput" placeholder="Enter a city">
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="weather-info">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+    <script src="weatherwebsite.js"></script>
+</body>
+</html>
+
+//CSS_CODE
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url('https://media.istockphoto.com/id/162428248/photo/cloudscape.jpg?s=612x612&w=0&k=20&c=9yNkLzvPtJouuJw7XRuvKQ0rD9Dh_UksrKKlvtEpKMg=');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80%; 
+  max-width: 600px; 
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 20px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+h1 {
+  font-size: 36px; 
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px; 
+}
+input[type="text"],
+button,
+p {
+  font-size: 25px;
+}
+
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 15px 30px; 
+  border-radius: 0 20px 20px 0; 
+  cursor: pointer;
+}
+
+.weather-info {
+  text-align: center;
+}
+
+p {
+  margin: 15px 0; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; 
+  }
+}
+
+
+//JS_CODE
+
+const apiKey = '7fb5a0cb68c68a5943bbba65358f1261';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+const locationInput = document.getElementById('locationInput');
+const searchButton = document.getElementById('searchButton');
+const locationElement = document.getElementById('location');
+const temperatureElement = document.getElementById('temperature');
+const descriptionElement = document.getElementById('description');
+
+searchButton.addEventListener('click', () => {
+        const location = locationInput.value;
+        if (location) {
+                fetchWeather(location);
+        }
+});
+
+function fetchWeather(location) {
+        const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+        fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                        locationElement.textContent = data.name;
+                        temperatureElement.textContent = `${Math.round(data.main.temp)}°C`; 
+                        descriptionElement.textContent = data.weather[0].description;
+                })
+                .catch(error => {
+                        console.error('Error fetching weather data:', error);
+                });
+}
+
