@@ -1,0 +1,377 @@
+//HTML_CODE
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="<link rel=" preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Pratyush's Portfolio</div>
+            <div class="right">
+                <ul class="menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="left-container">
+                <div class="lefttext">
+                    Hi! I am <span class="col">Pratyush</span>
+                    <div>and I am a </div>
+                    <span id="element"></span>
+                </div>
+                <a href="#"><button>
+                        <p>VIEW PROJECTS</p>
+                    </button></a>
+            </div>
+            <div class="right-container"></div>
+            <div class="design">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="footer" id="footer">
+            <div class="col1">
+                <h3>ABOUT</h4>
+                    <span class="name">Pratyush's Portfolio</span>
+                    <div>is a blog website where</div>
+                    <div>you will find geate tutorial</div>
+                    <div>on web design and development</div>
+            </div>
+            <div class="col2">
+                <h3>TECHNOLOGY</h4>
+                    <ul>
+                        <li>C</li>
+                        <li>Java</li>
+                        <li>UI</li>
+                        <li>Desktop Application</li>
+                        <li>Android</li>
+                    </ul>
+            </div>
+            <div class="col3">
+                <h3>CONTACT ME</h4>
+                    <div class="map">
+                        <i class="fa fa-map-marker"></i>-GIET University,Gunupur
+                    </div>
+                    <div class="call">
+                        <i class="fa fa-mobile-phone"></i>-7847836108
+                    </div>
+                    <div class="mail">
+                        <i class="fa fa-envelope"></i>-pm490394@gmail.com
+                    </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="follow">
+                <h3>FOLLOW ME ON</h4>
+                    <div class="social">
+                        <a href="https://www.facebook.com/pratyush.mishra.52056223">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@pratyushgamingyt6380">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pratyush_mishra_02?igsh=bjU5bWU1bHBkaXR6">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/PratyushGamingYT">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://github.com/pratyushkumarmishra02">
+                            <i class="fab fa-github"></i>
+                            <a
+                                href="https://www.linkedin.com/in/pratyush-kumar-mishra-324294295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </a>
+                    </div>
+
+            </div>
+
+
+        </div>
+        <div class="copy">
+            <span>&copy; 2024 Pratyush's Portfolio</span>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Desktop Application Designer', 'and a Video Editor'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
+
+
+//CSS_CODE
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: gray;
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 85px;
+    background-color: rgba(17, 212, 206, 0.356);
+}
+
+.left {
+    font-size: 1.8rem;
+}
+
+.menu {
+    display: flex;
+
+}
+
+.menu li {
+    display: flex;
+    list-style: none;
+    margin: 0 23px;
+}
+
+.menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+}
+
+.menu li a::after,
+.menu .active::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .5s;
+}
+
+.menu li a:hover::after,
+.menu .active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.firstsection {
+    display: flex;
+}
+
+.left-container {
+    padding: 80px;
+    background: rgb(8, 8, 34);
+    width: 850px;
+    height: 540px;
+}
+
+.lefttext {
+    font-size: 2.25rem;
+    height: 300px;
+}
+
+.right-container {
+    padding: 80px;
+    background: linear-gradient(-45deg, #3877ff, rgb(8, 8, 34) 70%);
+    width: 365px;
+    height: 540px;
+}
+
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 65.6%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, rgb(8, 8, 34) 50%);
+    width: 36rem;
+}
+
+.circle:nth-child(2) {
+    background-image: url(pic1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30rem;
+    border: 0.8rem solid white;
+    box-shadow:
+        0 0 1rem white,
+        inset 0 0 1rem white,
+        0 0 2rem blue,
+        inset 0 0 2rem blue,
+        0 0 8rem #3877ff,
+        inset 0 0 4rem #3877ff;
+}
+
+
+.col {
+    color: aqua;
+}
+
+#element {
+    color: rgb(85, 187, 235);
+}
+
+button {
+    padding: 0px 0px;
+    margin: 0px 200px;
+    background: rgb(9, 228, 97);
+    color: rgb(19, 1, 1);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button p {
+    padding: 15px 5px;
+    text-decoration: none;
+}
+
+a button:hover {
+    background: aqua;
+}
+
+button p:hover {
+    color: red;
+}
+
+.footer {
+    display: flex;
+    margin: auto;
+    height: 250px;
+    width: auto;
+    background-color: black;
+    top: 78%;
+}
+
+.col1 {
+    margin: 0 100px;
+    margin-left: 60px;
+}
+
+.col1 span.name {
+    color: rgb(209, 10, 10);
+}
+
+.col2 {
+    margin: 0 100px;
+    padding-left: 100px;
+}
+
+.col2 li {
+    list-style: none;
+}
+
+.col3 {
+    padding-left: 100px;
+}
+
+.fa.fa-map-marker:hover {
+    color: rgb(119, 196, 188);
+}
+
+.fa.fa-mobile-phone:hover {
+    color: rgb(119, 196, 188);
+}
+
+.fa.fa-envelope:hover {
+    color: rgb(119, 196, 188);
+}
+
+.mail a {
+    text-decoration: none;
+}
+
+.follow {
+    padding-left: 100px;
+    display: auto;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+}
+
+.fa-facebook-f:hover {
+    color: rgb(102, 102, 243);
+    font-size: 1.03rem;
+}
+
+.fa-youtube:hover {
+    color: red;
+}
+
+.fa-instagram:hover {
+    color: rgb(224, 103, 176);
+    font-size: 1.03rem;
+}
+
+.fa-telegram:hover {
+    color: rgb(55, 107, 228);
+    font-size: 1.03rem;
+}
+
+.fa-github:hover {
+    color: rgb(219, 224, 235);
+    font-size: 1.03rem;
+}
+
+.fa-linkedin:hover {
+    color: rgb(87, 69, 253);
+    font-size: 1.03rem;
+}
+
+.copy {
+    background-color: rgb(9, 109, 51);
+    width: auto;
+    margin: auto;
+}
